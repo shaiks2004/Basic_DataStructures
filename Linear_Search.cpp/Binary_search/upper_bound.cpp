@@ -24,7 +24,7 @@ int main(){
             low=mid+1;
         }
     }
-      int lb = lower_bound(arr.begin(), arr.end(), target) - arr.begin();
+    int lb = lower_bound(arr.begin(), arr.end(), target) - arr.begin();
     int ub = upper_bound(arr.begin(), arr.end(), target) - arr.begin();
 
     cout << "My Upper Bound : " << ans << endl;

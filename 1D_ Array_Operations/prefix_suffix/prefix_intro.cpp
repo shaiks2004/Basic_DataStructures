@@ -5,17 +5,17 @@ using namespace std;
 class answer{
     public:
 
-        vector<int> suffixSum(vector<int> arr){
+        vector<int> prefixSum(vector<int> arr){
             int n=arr.size();    
-             vector<int> suffix(n);
-             suffix[n-1] = arr[n-1];
+             vector<int> prefix(n);
+             prefix[0] = arr[0];
 
 
-            for(int i=n-2;i>=0;i--){
-                suffix[i]=suffix[i+1]+arr[i];
+            for(int i=1;i<=arr.size();i++){
+                prefix[i]=prefix[i-1]+arr[i];
             }
             
-            return suffix;
+            return prefix;
             
         }
 
@@ -26,7 +26,7 @@ int main() {
     answer obj;
 
     vector<int> arr = {1, 2, 3, 4};
-    vector<int> prefix =obj.suffixSum(arr);
+    vector<int> prefix =obj.prefixSum(arr);
 
     cout << "Prefix Sum Array: ";
     for (int x : prefix) cout << x << " ";
